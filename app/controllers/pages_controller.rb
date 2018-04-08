@@ -3,10 +3,8 @@ class PagesController < ApplicationController
   end
 
   def about
-
   end
 
   def support
-
   end
 end
