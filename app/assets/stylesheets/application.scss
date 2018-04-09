@@ -19,9 +19,10 @@ body {
   text-decoration: none;
 }
 
-.jumbotron {
+.jumbotron-fluid {
+  background-color: rgba(0, 0, 0, .15);
   color: #fff;
   margin-top: 60px;
-  background: no-repeat center/100% asset-url('cover_image.png');
-  height: 350px;
+  background: no-repeat left/110% asset-url('cover_image.png');
+  height: auto;
 }
