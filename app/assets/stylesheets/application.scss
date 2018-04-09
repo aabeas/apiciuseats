@@ -8,7 +8,7 @@ body {
 #logo {
   float: left;
   font-size: 1.7em;
-  color: #fff;
+  color: #451F10;
   // text-transform: uppercase;
   letter-spacing: -1px;
   font-weight: bold;
@@ -23,6 +23,6 @@ body {
   background-color: rgba(0, 0, 0, .15);
   color: #fff;
   margin-top: 60px;
-  background: no-repeat left/110% asset-url('cover_image.png');
+  background: no-repeat left asset-url('cover_image.png');
   height: auto;
 }
