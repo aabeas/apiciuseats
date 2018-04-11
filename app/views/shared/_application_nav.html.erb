@@ -1,8 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #fff;">
-      <a class="navbar-brand" href="#" style="color: #451F10;">
-        <img src="icon-ae-1024.png" width="30" height="30" class="d-inline-block align-top" alt="Company Logo of Apicius Eats">
-        ApiciusEats
-      </a>
+      <%= link_to root_path do %>
+        <%= image_tag "icon-ae-1024.png", width: '30', alt: "Apicius Eats Logo", class: 'navbar-brand d-inline-block align-top' %>
+      <% end %>
       <%= link_to "ApiciusEats", root_path, class: "navbar-brand", id: "logo" %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
