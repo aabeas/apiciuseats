@@ -6,8 +6,23 @@ body {
   margin-top: 60px;
 }
 
-#logo {
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+}
+
+.display-4 {
+  font-size: 2.5rem;
+}
+@media (min-width: 768px) {
+  .display-4 {
+    font-size: 3rem;
+  }
+}
+
+#blog-header-logo {
   float: left;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  // font-size: 2.25rem;
   font-size: 1.5em;
   color: #451F10;
   // text-transform: uppercase;
@@ -15,15 +30,25 @@ body {
   font-weight: 300;
 }
 
-#logo:hover {
+#blog-header-logo:hover {
   color: #459A00;
   text-decoration: none;
 }
 
-.jumbotron-fluid {
+.jumbotron {
   background-color: rgba(0, 0, 0, .15);
   color: #fff;
   margin-top: 60px;
   background: no-repeat left asset-url('cover_image.png');
   height: auto;
+}
+
+.card-img-right {
+  height: 100%;
+  border-radius: 0 3px 3px 0;
+}
+
+.flex-auto {
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
