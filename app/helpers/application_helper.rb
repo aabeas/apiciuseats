@@ -17,6 +17,10 @@ module ApplicationHelper
         url: support_path,
         title: 'Support'
       },
+      {
+        url: recipes_path,
+        title: 'Recipes'
+      },
     ]
 
   end
