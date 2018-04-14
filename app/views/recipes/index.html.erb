@@ -1,0 +1,17 @@
+<div class="container">
+  <h1 align="center">Recipes Listing</h1>
+  <% @recipes.each do |recipe| %>
+    <div class="row" style="padding: 2.5px;">
+      <div class="col-md-2">
+        <section class="center">
+          <%= image_tag "iph_200x250.svg", width: '100', alt: "Card image cap", class: 'card-img-right flex-auto d-none d-lg-block' %>
+        </section>
+      </div>
+      <div class="col-md-8 well">
+        <h5><%= recipe.name %></h5>
+        <p><%= truncate(recipe.description, length: 150) %></p>
+        <p><span class="quiet"><small>Created <%= time_ago_in_words(recipe.created_at) %> ago</small></span></p>
+      </div>
+    </div>
+  <% end %>
+</div>
