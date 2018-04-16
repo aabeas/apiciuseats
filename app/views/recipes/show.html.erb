@@ -9,9 +9,9 @@
       <p class="lead"><%= simple_format(@recipe.description) %></p>
       <hr />
       <div align="right">
-        <p class="center"></p>
-        <p class="center"><%= link_to gravatar_for(@recipe.chef), recipes_path %></p>
-        <p><span><small>Created by: Chef <%= @recipe.chef.chefname.capitalize %> </small></span></p>
+        <p class="center">Created by: </p>
+        <p style="padding-right: 10px;"><%= link_to gravatar_for(@recipe.chef), recipes_path %></p>
+        <p><span><small>Chef <%= @recipe.chef.chefname.capitalize %> </small></span></p>
       </div>
       <div align='right'><small>Posted <%= time_ago_in_words(@recipe.created_at) %> ago</small></div>
     </div>

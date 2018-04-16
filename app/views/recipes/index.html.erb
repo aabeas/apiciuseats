@@ -5,8 +5,8 @@
     <% @recipes.each do |recipe| %>
       <div class="card">
         <div class="row">
-          <div class="col-md-3">
-            <%= image_tag "iph_250x200.svg", class: '', alt: "Card image cap" %>
+          <div class="chef_info col-md-3">
+            <%= gravatar_for(recipe.chef, size: 120) %>
           </div>
           <div class="col-md-7">
             <div class="card-body">
