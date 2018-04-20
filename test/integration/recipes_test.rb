@@ -17,9 +17,7 @@ class RecipesTest < ActionDispatch::IntegrationTest
   test "should get recipes listing" do
     get recipes_path
     assert_template 'recipes/index'
-    # assert_match @recipe.name, response.body
     assert_select "a[href=?]",recipe_path(@recipe), text: @recipe.name
-    # assert_match @recipe2.name, response.body
     assert_select "a[href=?]",recipe_path(@recipe2), text: @recipe2.name
   end
 
@@ -29,5 +27,13 @@ class RecipesTest < ActionDispatch::IntegrationTest
     assert_match @recipe.name.capitalize, response.body
     assert_match @recipe.description, response.body
     assert_match @chef.chefname, response.body
+  end
+
+  test "create new valid recipe" do
+    get new_recipe_path
+  end
+
+  test "reject invalid recipe submissions" do
+    get new_recipe_path
   end
 end
