@@ -2,13 +2,27 @@
   <%= render 'shared/page_title', title: 'Create a New Recipe' %>
 
   <% if @recipe.errors.any? %>
-    <%= pluralize(@recipe.errors.count, "error") %>
-    prohibited this <%= @recipe.class %> from being saved:
-    <ul>
-      <% @recipe.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <div class="card text-white bg-danger mb-3">
+          <div class="card-header">
+            <h5 class="card-title">
+              <%= pluralize(@recipe.errors.count, "error") %>
+              prohibited this <%= @recipe.class %> from being saved:
+            </h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              <ul>
+                <% @recipe.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   <% end %>
 
   <div class="row">
