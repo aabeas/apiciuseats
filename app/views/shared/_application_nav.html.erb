@@ -1,26 +1,22 @@
 <nav class="container navbar navbar-expand-md navbar-light fixed-top" style="background-color: #fff;">
   <%= link_to root_path do %>
-    <%= image_tag "icon-ae-1024.png", width: '30', alt: "Apicius Eats Logo", class: 'navbar-brand d-inline-block align-top' %>
+    <%= image_tag "icon-ae-wl-1024.png", width: '35', alt: "Apicius Eats Logo", class: 'navbar-brand d-inline-block align-bottom' %>
   <% end %>
   <%= link_to "ApiciusEats", root_path, class: "navbar-brand", id: "blog-header-logo" %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <%= nav_helper 'nav-link', 'span' %>
+      <%= nav_helper 'nav-link', 'li' %>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle show" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dish Types</a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <%= link_to "ApiciusEats", root_path, class:"nav-link dropdown-item" %>
-          <%= link_to "About Us", about_us_path, class:"nav-link dropdown-item" %>
-          <%= link_to "Support", support_path, class:"nav-link dropdown-item" %>
+        <a href="#" class="nav-link dropdown-toggle show" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Recipes</a>
+        <div class="dropdown-menu"  aria-labelledby="navbarDropdown">
+          <%= link_to "Recipes", recipes_path, class:"dropdown-item" %>
           <div class="dropdown-divider"></div>
-          <%= link_to "Recipes", recipes_path, class:"nav-link dropdown-item" %>
+          <%= link_to "Create a new recipe", new_recipe_path, class:"dropdown-item" %>
         </div>
       </li>
-      <li></li>
     </ul>
   </div>
 </nav>
