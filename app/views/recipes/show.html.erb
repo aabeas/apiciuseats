@@ -18,7 +18,7 @@
       </div>
       <div align="right">
         <p class="center">Created by: </p>
-        <p><%= link_to gravatar_for(@recipe.chef), chef_path %></p>
+        <p><%= link_to gravatar_for(@recipe.chef), chef_path(@recipe.chef) %></p>
         <p><span><small>Chef <%= @recipe.chef.chefname.capitalize %> </small></span></p>
       </div>
       <div align='right'><small>Posted <%= time_ago_in_words(@recipe.created_at) %> ago</small></div>
