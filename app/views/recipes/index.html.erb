@@ -2,33 +2,14 @@
   <%= render 'shared/page_title', title: 'Recipes Listing' %>
   <div class="row">
     <div class="container">
-    <% @recipes.each do |recipe| %>
-      <div class="card">
-        <div class="row">
-          <div class="col-md-2">
-          </div>
-          <div class="chef_info col-md-1">
-            <%= gravatar_for(recipe.chef, size: 120) %>
-          </div>
-          <div class="col-md-7">
-            <div class="card-body">
-              <h5><%= link_to recipe.name, recipe_path(recipe) %></h5>
-              <p><%= truncate(recipe.description, length: 150) %></p>
-              <p><span class="quiet"><small>Created <%= time_ago_in_words(recipe.created_at) %> ago</small></span></p>
-            </div>
-          </div>
-          <div class="col-md-2">
-          </div>
-        </div>
-      </div>
-    <% end %>
+      <%= render 'recipe', obj: @recipes %>
     </div>
   </div>
 </div>
 
 <div class="album py-5 bg-light">
   <div class="container">
-    <div class="row" >
+    <div class="row">
       <% @recipes.each do |recipe| %>
       <div class="col-md-4">
         <div class="card mb-4 box-shadow">

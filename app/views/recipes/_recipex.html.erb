@@ -1,0 +1,22 @@
+<div class="container py-5">
+  <div class="row">
+    <% obj.each do |recipe| %>
+    <div class="col-md-4">
+      <div class="card mb-4 box-shadow">
+        <%= image_tag "iph_200x200.svg", class: 'card-img-top', alt: "Card image cap" %>
+        <div class="card-body">
+          <h3 class="mb-0"><%= link_to recipe.name, recipe_path(recipe) %></h3>
+          <p class="card-text"><%= truncate(recipe.description, length: 75) %></p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+            </div>
+            <p><span class="quiet"><small>Created <%= time_ago_in_words(recipe.created_at) %> ago</small></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
