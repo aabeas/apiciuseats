@@ -1,6 +1,8 @@
 Chef.create!(
   chefname: "thomas",
-  email: "thomas@example.com"
+  email: "thomas@example.com",
+  password: "password",
+  password_confirmation: "password"
 )
 
 puts "1 reg chef one"
@@ -16,7 +18,9 @@ puts "3 recipe posts created for chef one"
 
 Chef.create!(
   chefname: "homas",
-  email: "homas@example.com"
+  email: "homas@example.com",
+  password: "password",
+  password_confirmation: "password"
 )
 
 puts "1 reg chef two"
@@ -32,7 +36,9 @@ puts "3 recipe posts created for chef two"
 
 Chef.create!(
   chefname: "omas",
-  email: "omas@example.com"
+  email: "omas@example.com",
+  password: "password",
+  password_confirmation: "password"
 )
 
 puts "1 reg chef three"
