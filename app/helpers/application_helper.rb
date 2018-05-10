@@ -15,6 +15,10 @@ module ApplicationHelper
         title: 'About Us'
       },
       {
+        url: chefs_path,
+        title: 'Chefs'
+      },
+      {
         url: support_path,
         title: 'Support'
       }

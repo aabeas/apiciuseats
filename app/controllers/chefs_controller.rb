@@ -1,6 +1,11 @@
 class ChefsController < ApplicationController
   before_action :set_chef, only: [:show]
 
+  def index
+    @chefs = Chef.all
+
+  end
+
   def show
   end
 
