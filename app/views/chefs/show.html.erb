@@ -16,7 +16,9 @@
     <div class="col-md-12">
       <br>
       <h4 align="center"> ContributionS </h5>
-      <%= render 'recipes/recipex', obj: @chef.recipes %>
+      <%= will_paginate @chef_recipes, class: "text-center" %>
+      <%= render 'recipes/recipex', obj: @chef_recipes %>
+      <%= will_paginate @chef_recipes, class: "text-center" %>
     </div>
   </div>
 </div>

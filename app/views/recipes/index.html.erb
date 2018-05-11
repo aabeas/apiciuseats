@@ -2,7 +2,9 @@
   <%= render 'shared/page_title', title: 'Recipes Listing' %>
   <div class="row">
     <div class="container">
+      <%= will_paginate class: "text-center" %>
       <%= render 'recipe', obj: @recipes %>
+      <%= will_paginate class: "text-center" %>
     </div>
   </div>
 </div>
