@@ -1,5 +1,5 @@
 class ChefsController < ApplicationController
-  before_action :set_chef, only: [:show]
+  before_action :set_chef, only: [:show, :edit, :update, :destroy]
 
   def index
     @chefs = Chef.paginate(page: params[:page], per_page: 3)
@@ -25,17 +25,21 @@ class ChefsController < ApplicationController
   end
 
   def edit
-    @chef = Chef.find(params[:id])
   end
 
   def update
-    @chef = Chef.find(params[:id])
     if @chef.update(chef_params)
       flash[:success] = "Your account was updated successfully"
       redirect_to @chef
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @chef.destroy
+    flash[:danger] = "Chef and all associated recipes have been deleted!"
+    redirect_to chefs_path
   end
 
   private
