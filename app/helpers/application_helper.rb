@@ -7,14 +7,6 @@ module ApplicationHelper
   def nav_items
     [
       {
-        url: about_us_path,
-        title: 'About Us'
-      },
-      {
-        url: support_path,
-        title: 'Support'
-      },
-      {
         url: chefs_path,
         title: 'Chefs'
       },
