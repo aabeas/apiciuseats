@@ -4,8 +4,8 @@
   <div class="card w-auto w-75 mx-auto bg-light" style="margin: 25px 0;">
     <div class="card-body">
 
-      <div class="form-group col-md-12 mr-auto">
-        [ <%= link_to "Have an account?", root_path, class: "" %> ]
+      <div class="text-center text-muted col-md-12 mr-auto">
+        [ <%= link_to "Have an account?", login_path %> ]
       </div>
 
       <%= form_for(@chef, :html => {class: "col-md-12 mr-auto", role: "form"}) do |f| %>

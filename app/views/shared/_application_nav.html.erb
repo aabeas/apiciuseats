@@ -23,7 +23,7 @@
     <ul class="nav navbar-nav ml-auto">
       <% if logged_in? %>
         <li class="nav-item dropdown">
-          <a href="#" class="nav-link dropdown-toggle show" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= current_chef.chefname.titleize %>'s Profile</a>
+          <a href="#" class="nav-link dropdown-toggle show" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= current_chef.chefname.titleize %>'s Profile <%= "Admin" if current_chef.admin? %> </a>
           <div class="dropdown-menu"  aria-labelledby="navbarDropdown">
             <%= link_to "View your profile", chef_path(current_chef), class:"dropdown-item" %>
             <%= link_to "Edit your profile", edit_chef_path(current_chef), class:"dropdown-item" %>
