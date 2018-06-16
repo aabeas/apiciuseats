@@ -4,7 +4,7 @@ module ApplicationHelper
     DiospilleViewTool::Renderer.copyright 'ApiciusEats', 'All rights reserved'
   end
 
-  def nav_items
+  def nav_items_lo
     [
       {
         url: chefs_path,
@@ -13,6 +13,10 @@ module ApplicationHelper
       {
         url: recipes_path,
         title: 'Recipes'
+      },
+      {
+        url: ingredients_path,
+        title: 'Ingredients'
       }
     ]
 
@@ -20,7 +24,7 @@ module ApplicationHelper
 
   def nav_helper style, tag_type
     nav_links = ''
-    nav_items.each do |item|
+    nav_items_lo.each do |item|
       nav_links << "<#{tag_type}><a href='#{item[:url]}' class='#{style} #{active? item[:url]}'>#{item[:title]}</a></#{tag_type}>"
     end
     nav_links.html_safe

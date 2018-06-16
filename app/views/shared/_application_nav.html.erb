@@ -8,7 +8,6 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="nav navbar-nav mr-auto">
-      <%= nav_helper 'nav-link', 'li' %>
       <% if logged_in? %>
       <li class="nav-item dropdown">
         <a href="#" class="nav-link dropdown-toggle show" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Recipes</a>
@@ -18,6 +17,16 @@
           <%= link_to "Create a new recipe", new_recipe_path, class:"dropdown-item" %>
         </div>
       </li>
+      <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle show" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ingredients</a>
+        <div class="dropdown-menu"  aria-labelledby="navbarDropdown">
+          <%= link_to "Ingredients", ingredients_path, class:"dropdown-item" %>
+          <div class="dropdown-divider"></div>
+          <%= link_to "Create a new ingrdients", new_ingredient_path, class:"dropdown-item" %>
+        </div>
+      </li>
+      <% else %>
+        <%= nav_helper 'nav-link', 'li' %>
       <% end %>
     </ul>
     <ul class="nav navbar-nav ml-auto">

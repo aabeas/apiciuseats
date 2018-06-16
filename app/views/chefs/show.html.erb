@@ -14,11 +14,16 @@
   </div>
   <div class="row">
     <div class="col-md-12">
-      <br>
-      <h4 align="center"> ContributionS </h5>
-      <%= will_paginate @chef_recipes, class: "text-center" %>
-      <%= render 'recipes/recipex', obj: @chef_recipes %>
-      <%= will_paginate @chef_recipes, class: "text-center" %>
+      <% if @chef.recipes.count != 0 %>
+        <br>
+        <h4 align="center"> ContributionS </h4>
+        <%= will_paginate @chef_recipes, class: "text-center" %>
+        <%= render 'recipes/recipex', obj: @chef_recipes %>
+        <%= will_paginate @chef_recipes, class: "text-center" %>
+      <% else %>
+        <br>
+        <h4 align="center"> No recipes yet! </h4>
+      <% end %>
     </div>
   </div>
 </div>
