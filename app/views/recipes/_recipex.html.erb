@@ -7,6 +7,9 @@
         <div class="card-body">
           <h3 class="mb-0"><%= link_to recipe.name, recipe_path(recipe) %></h3>
           <p class="card-text"><%= truncate(recipe.description, length: 75) %></p>
+          <% if recipe.ingredients.any? %>
+            <p>Ingredients: <%= render recipe.ingredients %></p>
+          <% end %>
           <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
                 <%= link_to "View", recipe_path(recipe), class: "btn btn-sm btn-outline-secondary", type: "button" %>

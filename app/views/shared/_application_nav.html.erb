@@ -9,6 +9,9 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="nav navbar-nav mr-auto">
       <% if logged_in? %>
+      <li class="nav-item">
+        <%= link_to "Chefs", chefs_path, class:"nav-link" %>
+      </li>
       <li class="nav-item dropdown">
         <a href="#" class="nav-link dropdown-toggle show" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Recipes</a>
         <div class="dropdown-menu"  aria-labelledby="navbarDropdown">
@@ -18,11 +21,18 @@
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a href="#" class="nav-link dropdown-toggle show" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ingredients</a>
+        <a href="#" class="nav-link dropdown-toggle show" style="min-width: 300px;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ingredients</a>
         <div class="dropdown-menu"  aria-labelledby="navbarDropdown">
-          <%= link_to "Ingredients", ingredients_path, class:"dropdown-item" %>
+          <%= link_to "Ingredient List", ingredients_path, class:"dropdown-item" %>
+          <%= link_to "Add Ingredient", new_ingredient_path, class:" dropdown-item" %>
           <div class="dropdown-divider"></div>
-          <%= link_to "Create a new ingrdients", new_ingredient_path, class:"dropdown-item" %>
+          <div class="row w-100">
+            <% Ingredient.all.each do |ingredient| %>
+            <div class="col-sm-3">
+              <small><%= link_to ingredient.name, ingredient_path(ingredient), class:"dropdown-item text-success" %></small>
+            </div>
+            <% end %>
+          </div>
         </div>
       </li>
       <% else %>

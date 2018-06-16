@@ -1,0 +1,17 @@
+<div class="container py-5 bg-light">
+  <%= render 'shared/page_title', title: "#{@ingredient.name}" %>
+  <div class="row">
+    <div class="col-md-12">
+      <% if @ingredient.recipes.count != 0 %>
+        <br>
+        <h4 align="center"> ~ Recipe Suggestions ~ </h4>
+        <%= will_paginate @ingredient_recipes, class: "text-center" %>
+        <%= render 'recipes/recipex', obj: @ingredient_recipes %>
+        <%= will_paginate @ingredient_recipes, class: "text-center" %>
+      <% else %>
+        <br>
+        <h4 align="center"> No recipes yet! </h4>
+      <% end %>
+    </div>
+  </div>
+</div>
