@@ -24,7 +24,9 @@
         <a href="#" class="nav-link dropdown-toggle show" style="min-width: 300px;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ingredients</a>
         <div class="dropdown-menu"  aria-labelledby="navbarDropdown">
           <%= link_to "Ingredient List", ingredients_path, class:"dropdown-item" %>
-          <%= link_to "Add Ingredient", new_ingredient_path, class:" dropdown-item" %>
+          <% if logged_in? && current_chef.admin? %>
+            <%= link_to "Add Ingredient", new_ingredient_path, class:" dropdown-item" %>
+          <% end %>
           <div class="dropdown-divider"></div>
           <div class="row w-100">
             <% Ingredient.all.each do |ingredient| %>

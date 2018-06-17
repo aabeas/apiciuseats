@@ -12,7 +12,7 @@
           <% if logged_in? && current_chef.admin? && !chef.admin?%>
           <li><%= link_to "Delete", chef_path(chef), method: :delete,
             data: {confirm: "Are you shure you want to delete the chef and all associated recipes?"} %></li>
-            <% end %>
+          <% end %>
         </div>
       </ul>
     <% end %>
