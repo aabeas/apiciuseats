@@ -8,6 +8,9 @@
       <hr />
       <p class="lead"><%= simple_format(@recipe.description) %></p>
       <hr />
+      <% if @recipe.ingredients.any? %>
+        <p>Ingredients: <%= render @recipe.ingredients %></p>
+      <% end %>
       <div class="recipe-actions">
         <% if logged_in? && (current_chef == @recipe.chef || current_chef.admin?) %>
           <%= link_to "Edit", edit_recipe_path(@recipe), class: "btn btn-xs btn-outline-success" %>
