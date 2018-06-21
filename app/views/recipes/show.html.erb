@@ -1,5 +1,6 @@
 <div class="container py-5 bg-light">
   <%= render 'shared/page_title', title: @recipe.name %>
+
   <div class="row">
     <div class="col-md-1">
     </div>
@@ -8,9 +9,11 @@
       <hr />
       <p class="lead"><%= simple_format(@recipe.description) %></p>
       <hr />
+
       <% if @recipe.ingredients.any? %>
         <p>Ingredients: <%= render @recipe.ingredients %></p>
       <% end %>
+
       <div class="recipe-actions">
         <% if logged_in? && (current_chef == @recipe.chef || current_chef.admin?) %>
           <%= link_to "Edit", edit_recipe_path(@recipe), class: "btn btn-xs btn-outline-success" %>
@@ -21,14 +24,39 @@
         <% end %>
         <%= link_to "Return to recipes listing", recipes_path, class: "btn btn-xs btn-outline-primary" %>
       </div>
+
       <div align="right">
-        <p class="center">Created by: </p>
+        <p class="center">Recipe by: </p>
         <p><%= link_to gravatar_for(@recipe.chef), chef_path(@recipe.chef) %></p>
         <p><span><small>Chef <%= @recipe.chef.chefname.capitalize %> </small></span></p>
       </div>
+
       <div align='right'><small>Posted <%= time_ago_in_words(@recipe.created_at) %> ago</small></div>
     </div>
-    <div class="col-md-1">
-    </div>
   </div>
+
+  <% if @recipe.comments.any? %>
+    <div class="row">
+      <div class="col-md-1">
+      </div>
+      <div class="col-md-8 col-md-offset-2">
+        <h4 class="center description"><strong>Review Comments: </strong></h4>
+        <hr />
+        <div id="messages">
+          <%= render partial: 'comments/comments', object: @comments %>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <div class="row">
+      <div class="col-md-1">
+      </div>
+      <div class="col-md-8 col-md-offset-2">
+        <h4 class="center description">
+          <strong>No Comments Yet!</strong>
+        </h4>
+      </div>
+    </div>
+  <% end %>
+
 </div>
