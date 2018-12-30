@@ -34,10 +34,10 @@ module ApplicationHelper
     "active" if current_page? path
   end
 
-  def gravatar_for(user, options = { size: 60 })
-    gravatar_id = Digest::MD5::hexdigest(user.email.downcase)
+  def gravatar_for(user, options = { size: 40 })
+    gravatar_id = Digest::MD5.hexdigest(user.email.downcase)
     size = options[:size]
-    gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?d=identicon"
+    gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?d=identicon&s=#{size}"
     image_tag(gravatar_url, alt: user.chefname, class: "rounded-circle")
   end
 
